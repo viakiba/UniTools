@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.paste.cloud.dao.MemorandumDataDAO">
+
+    <resultMap id="memorandumDataMap" type="com.paste.cloud.model.MemorandumData">
+        <id property="uid" column="uid"/>
+        <result property="content" column="content"/>
+        <result property="createTime" column="create_time"/>
+        <result property="topIs" column="top_is"/>
+    </resultMap>
+
+    <!--通过ID查询单个-->
+    <select id="findById" resultMap="memorandumDataMap">
+        SELECT uid,content,create_time,top_is FROM memorandum_data
+        WHERE uid=#{id}
+    </select>
+
+    <!--分页查询-->
+    <select id="findByPage" resultMap="memorandumDataMap">
+        SELECT uid,content,create_time,top_is FROM memorandum_data
+    </select>
+
+    <!--新增-->
+    <insert id="insert">
+        INSERT INTO memorandum_data(uid,content,create_time,top_is)
+        VALUES (#{uid},#{content},#{createTime},#{topIs})
+    </insert>
+
+    <!--修改-->
+    <update id="update">
+        UPDATE memorandum_data SET content=#{content},create_time=#{createTime},top_is=#{topIs}
+        WHERE uid=#{uid}
+    </update>
+
+    <!--通过ID删除单个-->
+    <delete id="deleteById">
+        DELETE FROM memorandum_data
+        WHERE uid=#{id}
+    </delete>
+
+</mapper>

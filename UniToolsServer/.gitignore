@@ -1,0 +1,38 @@
+PasteData/target/
+PasteData/logs/
+PasteData/.mvn/
+PasteData/.idea
+PasteData/.mvn
+PasteData/*.iws
+PasteData/*.iml
+PasteData/*.ipr
+PcClient/out
+PcClient/.idea
+PcClient/*.iml
+ElectronPcClient/node_modules/
+ElectronPcClient/package-lock.json
+ElectronPcClient/.DS_Store
+ElectronPcClient/node_modules
+ElectronPcClient//dist
+
+# local env files
+ElectronPcClient/.env.local
+ElectronPcClient/.env.*.local
+
+# Log files
+ElectronPcClient/npm-debug.log*
+ElectronPcClient/yarn-debug.log*
+ElectronPcClient/yarn-error.log*
+
+# Editor directories and files
+ElectronPcClient/.idea
+ElectronPcClient/.vscode
+ElectronPcClient/*.suo
+ElectronPcClient/*.ntvs*
+ElectronPcClient/*.njsproj
+ElectronPcClient/*.sln
+ElectronPcClient/*.sw*
+
+#Electron-builder output
+ElectronPcClient//dist_electron
+ElectronPcClient//build/

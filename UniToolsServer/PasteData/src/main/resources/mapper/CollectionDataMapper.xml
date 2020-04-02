@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.paste.cloud.dao.CollectionDataDAO">
+
+    <resultMap id="collectionDataMap" type="com.paste.cloud.model.CollectionData">
+        <id property="uid" column="uid"/>
+        <result property="uuid" column="uuid"/>
+        <result property="content" column="content"/>
+        <result property="hashSecret" column="hash_secret"/>
+        <result property="createTime" column="create_time"/>
+        <result property="topIs" column="top_is"/>
+    </resultMap>
+
+    <!--通过ID查询单个-->
+    <select id="findById" resultMap="collectionDataMap">
+        SELECT uid,uuid,content,hash_secret,create_time,top_is FROM collection_data
+        WHERE uid=#{id}
+    </select>
+
+    <!--分页查询-->
+    <select id="findByPage" resultMap="collectionDataMap">
+        SELECT uid,uuid,content,hash_secret,create_time,top_is FROM collection_data
+    </select>
+
+    <!--新增-->
+    <insert id="insert">
+        INSERT INTO collection_data(uid,uuid,content,hash_secret,create_time,top_is)
+        VALUES (#{uid},#{uuid},#{content},#{hashSecret},#{createTime},#{topIs})
+    </insert>
+
+    <!--修改-->
+    <update id="update">
+        UPDATE collection_data SET uuid=#{uuid},content=#{content},hash_secret=#{hashSecret},create_time=#{createTime},top_is=#{topIs}
+        WHERE uid=#{uid}
+    </update>
+
+    <!--通过ID删除单个-->
+    <delete id="deleteById">
+        DELETE FROM collection_data
+        WHERE uid=#{id}
+    </delete>
+
+</mapper>
