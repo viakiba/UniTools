@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "@vant/touch-emulator": "^1.2.0",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "iohook": "0.6.2",
     "lndb": "^0.0.3",
     "vant": "^2.4.2",
